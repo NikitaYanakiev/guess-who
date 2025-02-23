@@ -1,0 +1,70 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Центрирование на экране
+  padding: 20px;
+
+  &__container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    display: block;
+    padding: 12px;
+    background: #ff9800;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+
+    &:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__container {
+      width: 90%;
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__link {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+}

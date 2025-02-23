@@ -1,0 +1,193 @@
+.game {
+  padding: 50px 20px;
+  text-align: center;
+  
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  &__card {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &.hidden {
+      filter: brightness(0.1);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__selected {
+    margin-top: 30px;
+    text-align: center;
+
+    .game__subtitle {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    &-card {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    background-color: #007bff;
+    color: #fff;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &--reset {
+      background-color: #ff4d4d;
+
+      &:hover {
+        background-color: #cc0000;
+      }
+    }
+    &--back {
+     margin-bottom: 50px;
+    }
+  }
+}
+
+// Стили для модального окна
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-y: auto;
+  max-height: 90vh; // Исправляем проблему со скроллом
+
+  &__content {
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  &__card {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__close {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: #cc0000;
+    }
+  }
+}
+
+// Улучшенная адаптация
+@media (max-width: 768px) {
+  .game__body {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+
+  .modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .game__body {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .game__card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .modal__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
