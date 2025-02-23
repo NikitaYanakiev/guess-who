@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/guess-who" element={<MainPage />} />
           <Route path="/category/:categoryName" element={<CategoryGame />} />
         </Routes>
       </BrowserRouter>

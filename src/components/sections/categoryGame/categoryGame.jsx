@@ -48,7 +48,7 @@ const CategoryGame = () => {
 
         <button
           className="game__button game__button--back"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/guess-who")}
         >
           Назад
         </button>
