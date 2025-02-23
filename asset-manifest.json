@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/guess-who/static/css/main.b24165b4.css",
+    "main.js": "/guess-who/static/js/main.f93ea6fc.js",
+    "index.html": "/guess-who/index.html",
+    "main.b24165b4.css.map": "/guess-who/static/css/main.b24165b4.css.map",
+    "main.f93ea6fc.js.map": "/guess-who/static/js/main.f93ea6fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b24165b4.css",
+    "static/js/main.f93ea6fc.js"
+  ]
+}
